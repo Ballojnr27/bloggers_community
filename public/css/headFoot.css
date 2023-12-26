@@ -1,0 +1,104 @@
+header{
+    background:rgb(95, 155, 120);
+    color:white;
+    padding-top:30px;
+    min-height:70px;
+    border-bottom: green 3px solid;
+    }
+    
+    header #branding{
+    float:right;
+    }
+    
+    header #branding h1{
+    margin:0;
+    }
+    
+    footer{
+    text-align:center;
+    background-color:rgb(95, 155, 120);
+    background-size:50px;
+    color: black;
+    }
+    
+    
+    .sidebar {
+                height: 100vh;
+                width: 200px;
+                background-color: hsla(139, 61%, 63%, 0.248);
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+                color:black;
+                text-decoration:none;
+                font-size:16px;
+                
+    
+            }
+            .sidebar.show {
+                transform: translateX(0%);
+            }
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .sidebar ul li {
+                padding: 10px;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color:black;
+            }
+            .sidebar ul li:hover {
+                color: hsla(139, 61%, 63%, 0.248);
+            }
+            .content {
+                margin-left: 200px;
+                padding: 20px;
+            }
+            .toggle-button {
+                display: block;
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+                background-color: #333;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                color: #fff;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+                z-index: 9999;
+            }
+
+    .primary{
+        color:gray;
+        border-radius: 1px;
+        border-width: 5px;
+        font-size:15px;
+        font-weight:bold;
+        border-bottom: none;
+        text-decoration:none;
+        text-transform:uppercase;
+
+    }
+
+    .primary:hover{
+        color: #333;
+    }
+
+    
+    .highlight{
+        font-size: x-large;
+        color: black;
+    }
