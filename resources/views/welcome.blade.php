@@ -41,7 +41,7 @@ font-weight:bold;
 <body>
     
     <br><br><img src="/img/dollar.jpg" width="70px" alt="logo"><br>
-    <h2>Welcome To Bloggers Community<h2>
+    <h2>Welcome To Bloggers' Community<h2>
     <a  href="/login">LOG IN</a>
     <a  href="/register">SIGN UP</a>
 </form>
