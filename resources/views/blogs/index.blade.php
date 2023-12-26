@@ -63,7 +63,7 @@ h1 {
 			<h1>Welcome, {{$user->username}}</h1>
 
 		<p>
-		Welcome to <b>Bloggers Community</b>, the ultimate blogging platform designed exclusively for you! Our platform offers a wide range of features and tools to enhance your blogging experience and help you connect with a vibrant community of like-minded individuals.<br><br>
+		Welcome to <b>Blogger Community</b>, the ultimate blogging platform designed exclusively for you! Our platform offers a wide range of features and tools to enhance your blogging experience and help you connect with a vibrant community of like-minded individuals.<br><br>
 
 Key Features for Registered Users:<br>
 
