@@ -35,19 +35,25 @@
               
               <div class="card-body">
 
-                         <div class="row mb-3">
-                            <p class="col-md-4 text-md-end">{{ __('Username') }}: <br><b>{{ $blog->username }}</b></p>
+
+                         <div class="info">
+                            <p ><b>{{ __('Username') }}: </b><br>{{ $blog->username }}</p>
                          </div>
 
-                         <div class="row mb-3">
-                         <p class="col-md-4 text-md-end">{{ __('Tittle') }}: <br><b>{{ $blog->tittle }}</b></p>
+                         <div class="info ">
+                         <p ><b>{{ __('Tittle') }}: </b><br>{{ $blog->tittle }}</p>
                          </div>
 
-                         <div class="row mb-3">
-                         <p class="col-md-4 text-md-end">{{ __('Content') }}: <br><b>{{ $blog->content }}</b></p>
+                         <div class="info">
+                         <p ><b>{{ __('Content') }}: </b><br>{{ $blog->content }}</p>
                          </div>
 
-                         <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST">
+                          
+                        
+                        <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST">
+                        <a href="{{route('blogs.comment')}}" class="comment">Comment</a>
+                        
+                            
                              @csrf
                              @method('DELETE')
                            <button>Delete Blog</button>

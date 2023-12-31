@@ -28,6 +28,9 @@ Route::post('/create/store', [App\Http\Controllers\BlogController::class, 'store
 Route::get('/my_blogs', [App\Http\Controllers\BlogController::class, 'show'])->name('blogs.show')->middleware('auth');
 Route::delete('/my_blogs/{id}', [App\Http\Controllers\BlogController::class, 'destroy'])->name('blogs.destroy')->middleware('auth');
 Route::get('/blog_feed', [App\Http\Controllers\BlogController::class, 'showall'])->name('blogs.showall')->middleware('auth');
+Route::get('/comment', [App\Http\Controllers\CommentController::class, 'comment'])->name('blogs.comment')->middleware('auth');
+Route::post('/comment/store', [App\Http\Controllers\CommentController::class, 'store_comment'])->name('blogs.store_comment');
+
 
 
 

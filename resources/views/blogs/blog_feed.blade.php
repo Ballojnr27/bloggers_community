@@ -34,25 +34,38 @@
               
               
               <div class="card-body">
-
-                         <div class="row mb-3">
-                            <p class="col-md-4 text-md-end">{{ __('Username') }}: <br><b>{{ $blog->username }}</b></p>
+                
+                   
+                         <div class="info">
+                            <p ><b>{{ __('Username') }}: </b><br>{{ $blog->username }}</p>
                          </div>
 
-                         <div class="row mb-3">
-                         <p class="col-md-4 text-md-end">{{ __('Tittle') }}: <br><b>{{ $blog->tittle }}</b></p>
+                         <div class="info ">
+                         <p ><b>{{ __('Tittle') }}: </b><br>{{ $blog->tittle }}</p>
                          </div>
 
-                         <div class="row mb-3">
-                         <p class="col-md-4 text-md-end">{{ __('Content') }}: <br><b>{{ $blog->content }}</b></p>
+                         <div class="info">
+                         <p ><b>{{ __('Content') }}: </b><br>{{ $blog->content }}</p>
                          </div>
+
+                         <div class="comment">
+
+                            <a href="{{route('blogs.comment')}}" class="comment">Comment</a>
+                        </div>
+                        
 
                         </div>
                          @endforeach
                         </div>
+
+                        
+
+                        
                         
                     </div>
+                    
             </div>
+        
         </div>
     </div>
 </div><br>
