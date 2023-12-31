@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Models\User;
+use App\Http\Controllers\Auth\BlogController;
+use Illuminate\Support\Facades\Auth;
+
 
 use Illuminate\Http\Request;
 
@@ -14,13 +18,17 @@ class CommentController extends Controller
    }
    
    public function store_comment(){
-         $blog = Blog::all();
+    $user = Auth::user();    
+    $blog = Blog::where('username', $user->uswrname)->get();
+         
    
    
          $comment = new Comment();
     
-        $comment->post_id = 2;
+        $comment->post_id = 23;
         $comment->comment = request('comment');
+
+        
         
         
     

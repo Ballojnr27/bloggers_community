@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('comment');
             $table->unsignedBigInteger('post_id');
-            $table->foreign('post_id')->references('id')->on('blogs')->onDelete('cascade');
             $table->timestamps();
         });
     }
