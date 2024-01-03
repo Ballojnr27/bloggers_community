@@ -48,10 +48,21 @@
                          <p ><b>{{ __('Content') }}: </b><br>{{ $blog->content }}</p>
                          </div>
 
-                          
+                         <form method="post" action="{{ route('blogs.store_comment', ['postId' => $blog->id]) }}">
+                            @csrf
+                           <textarea name="body" placeholder="Add a comment"></textarea><br>
+                            <button type="submit">Submit Comment</button>
+                        </form>
+
+                        <br>
+
+                        <div class="comment">
+
+                            <a href="{{route('comments.show', ['postId' => $blog->id])}}" >View all Comments</a><br><br>
+                        </div>            
                         
                         <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST">
-                        <a href="{{route('blogs.comment')}}" class="comment">Comment</a>
+                       
                         
                             
                              @csrf
