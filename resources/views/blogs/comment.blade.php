@@ -1,8 +1,11 @@
+<!-- comments/show.blade.php -->
 
-<!-- Add comment form -->
-<form action="{{ route('blogs.store_comment') }}" method="post">
-    @csrf
-    <input type="hidden" name="post_id" value="">
-    <textarea name="comment" rows="3" placeholder="Add a comment" value="{{$blogs->tittle}}"></textarea>
-    <button type="submit">Submit</button>
-</form>
+<h1>Comments for Post</h1>
+
+@foreach($comments as $comment)
+    <p>{{ $comment->user->name }}: {{ $comment->body }}</p>
+@endforeach
+
+@if(empty($comment->body))
+<p>No comments</p>
+@endif

@@ -29,7 +29,9 @@ Route::get('/my_blogs', [App\Http\Controllers\BlogController::class, 'show'])->n
 Route::delete('/my_blogs/{id}', [App\Http\Controllers\BlogController::class, 'destroy'])->name('blogs.destroy')->middleware('auth');
 Route::get('/blog_feed', [App\Http\Controllers\BlogController::class, 'showall'])->name('blogs.showall')->middleware('auth');
 Route::get('/comment', [App\Http\Controllers\CommentController::class, 'comment'])->name('blogs.comment')->middleware('auth');
-Route::post('/comment/store', [App\Http\Controllers\CommentController::class, 'store_comment'])->name('blogs.store_comment');
+Route::post('blog_feed/{postId}/comment', [App\Http\Controllers\CommentController::class, 'store_comment'])->name('blogs.store_comment')->middleware('auth');
+Route::get('/comments/{postId}', [App\Http\Controllers\CommentController::class, 'show_comment'])->name('comments.show');
+
 
 
 

@@ -11,20 +11,23 @@ return new class extends Migration
      *
      * @return void
      */
+    
     public function up()
-    {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->string('comment');
-            $table->unsignedBigInteger('post_id');
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('comments', function (Blueprint $table) {
+        $table->id();
+        $table->unsignedBigInteger('user_id');
+        $table->unsignedBigInteger('post_id');
+        $table->text('body');
+        $table->timestamps();
+    });
+}
+
 
     /**
      * Reverse the migrations.
      *
-     * @return void    
+     * @return void    database/migrations/2023_12_31_142543_create_comments_table.php
      */
     public function down()
     {

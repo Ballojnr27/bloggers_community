@@ -16,38 +16,39 @@ class CommentController extends Controller
             
         return view('blogs.comment');
    }
+
+
    
-   public function store_comment(){
-    $user = Auth::user();    
-    $blog = Blog::where('username', $user->uswrname)->get();
-         
-   
-   
-         $comment = new Comment();
-    
-        $comment->post_id = 23;
-        $comment->comment = request('comment');
+    public function store_comment(Request $request, $postId)
+    {
 
         
-        
-        
-    
+        $request->validate([
+            'body' => 'required|min:5',
+        ]);
+
+        $comment = new Comment([
+            'user_id' => auth()->user()->id,
+            'post_id' => $postId,
+            'body' => $request->input('body'),
+        ]);
+
         $comment->save();
-        
-    
-        return redirect()->route('blogs.show');
-   }
 
-   /*public function store_comment(Request $request)
-{
-   
+        return redirect()->back()->with('success', 'Comment added successfully!');
+    }
 
-    Comment::create([
-        'comment' => $request->input('comment'),
-        'post_id' => $request->input('post_id'),
-    ]);
 
-    return redirect()->back()->with('success', 'Comment posted successfully!');
-}*/
-  
+    public function show_comment($postId)
+    {
+        $comments = Comment::where('post_id', $postId)->get();
+
+        return view('blogs.comment', compact('comments'));
+    }
+
+
+
 }
+
+  
+
