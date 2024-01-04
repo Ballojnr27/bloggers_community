@@ -3,9 +3,9 @@
 <h1>Comments for Post</h1>
 
 @foreach($comments as $comment)
-      @foreach($users as $user)
-    <p>{{ $user->username }}: {{ $comment->body }}</p>
-    @endforeach
+    
+    <p>{{ $comment->user->username }}: {{ $comment->body }}</p>
+
 @endforeach
 
 @if(empty($comment->body))

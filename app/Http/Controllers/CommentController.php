@@ -41,12 +41,9 @@ class CommentController extends Controller
 
     public function show_comment($postId)
     {
-        $comments = Comment::where('post_id', $postId)->get();
-        $commenter = Comment::all();
-       // $users = Auth::user()->where(['id', 3])->get();
-       $users = User::where('id', $commenter->user_id)->get();
-        
-        return view('blogs.comment', compact('comments', 'users'));
+        $comments = Comment::with('user')->where('post_id', $postId)->get();
+       
+        return view('blogs.comment', compact('comments'));
     }
 
 
