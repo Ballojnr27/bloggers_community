@@ -28,6 +28,9 @@
         <div class="col-md-8">
            <center><h1>My Blogs</h1></center> 
             <div class="card">
+            @if(empty($blog))
+            <center><p>You Do Not Have Any Blog</p></center>
+            @else
             @foreach($blogs as $blog)
               <center>  <div class="card-header">{{ $blog->created_at }}</div></center>
 
@@ -71,12 +74,14 @@
                         </form>
                         </div>
                          @endforeach
+                         @endif
                         </div>
                         
                     </div>
             </div>
         </div>
     </div>
+    
 </div><br>
 @endsection
 </body>

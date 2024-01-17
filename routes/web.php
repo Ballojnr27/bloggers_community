@@ -38,3 +38,6 @@ Route::get('/comments/{postId}', [App\Http\Controllers\CommentController::class,
 
 
 Auth::routes();
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
