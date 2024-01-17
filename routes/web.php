@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 
 
+
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('blogs.profile')->middleware('auth');
 Route::get('/profile/edit', [App\Http\Controllers\HomeController::class, 'edit_profile'])->name('blogs.edit_profile')->middleware('auth');
 Route::put('/profile/update', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('blogs.update_profile')->middleware('auth');
@@ -37,6 +38,3 @@ Route::get('/comments/{postId}', [App\Http\Controllers\CommentController::class,
 
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
