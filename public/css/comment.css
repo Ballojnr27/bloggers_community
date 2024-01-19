@@ -1,0 +1,50 @@
+  /* Style for the comment container */
+  .comment-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  /* Style for the commenter's name */
+  .commenter-name {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style for the comment text */
+  .comment-text {
+    margin-top: 5px;
+    color: #555;
+  }
+  
+  /* Style for the timestamp of the comment */
+  .comment-timestamp {
+    font-size: 0.8em;
+    color: #888;
+  }
+  
+  /* Style for the comment form */
+  .comment-form {
+    margin-top: 20px;
+  }
+  
+  /* Style for the input fields in the comment form */
+  .comment-form input, .comment-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the submit button in the comment form */
+  .comment-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .comment-form button:hover {
+    background-color: #45a049;
+  }
+  

@@ -1,13 +1,44 @@
-<!-- comments/show.blade.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comments</title>
+  
+  <link href="/css/comment.css" rel="stylesheet">
+</head>
+<body>
 
-<h1>Comments for Post</h1>
+  <h1>Comments</h1>
 
-@foreach($comments as $comment)
-    
-    <p>{{ $comment->user->username }}: {{ $comment->body }}</p>
+  @foreach($comments as $comment)
+  <div class="comment-container">
+  <div class="commenter-name"><i>@</i>{{ $comment->user->username }}</div>
+    <div class="comment-text">
+    {{ $comment->body }}
+    </div>
+    <div class="comment-timestamp">{{ $comment->created_at }}</div>
+  </div>
+ @endforeach
 
-@endforeach
-
-@if(empty($comment->body))
-<p>No comments</p>
+  @if(empty($comment->body))
+<p>No Comments</p>
 @endif
+
+  <!-- More comments can be added here 
+
+  <div class="comment-form">
+    <h2>Leave a Comment</h2>
+    <form action="submit_comment.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="comment">Comment:</label>
+      <textarea id="comment" name="comment" rows="4" required></textarea>
+
+      <button type="submit">Submit Comment</button>
+    </form>
+  </div>
+-->
+</body>
+</html>
