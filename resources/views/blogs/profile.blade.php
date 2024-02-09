@@ -9,7 +9,16 @@
               <center>  <div class="card-header">{{ __('My profile') }}</div></center>
 
                 <div class="card-body">
-                    
+
+                             @if(auth()->user()->profile_image)
+                                <img src="{{ asset('storage/' . auth()->user()->profile_image) }}" alt="Profile Image" width="100px">
+                            @else
+                                <!-- Default profile image or placeholder -->
+                                <img src="{{ asset('profile_images/no_image.png') }}" alt="Profile Image">
+                            @endif
+
+                            <p class="col-md-4 text-md-end">Profile Image</p>
+    
                         <div class="row mb-3">
                             <p class="col-md-4 text-md-end">{{ __('Firstname') }}: <b>{{ $user->firstname }}</b></p>
                          </div>

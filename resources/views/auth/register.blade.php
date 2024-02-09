@@ -5,17 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <center><div class="card-header">{{ __('Register') }}</div></center>
+                <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Firstname') }}</label>
+                            <label for="firstname" class="col-md-4 col-form-label text-md-end">{{ __('Firstname') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="firstname" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="firstname" type="text" class="form-control @error('name') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -26,10 +26,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Lastname') }}</label>
+                            <label for="lastname" class="col-md-4 col-form-label text-md-end">{{ __('Lastname') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="lastname" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="lastname" type="text" class="form-control @error('name') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -40,10 +40,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
+                            <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="username" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="username" type="text" class="form-control @error('name') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -52,7 +52,6 @@
                                 @enderror
                             </div>
                         </div>
-
 
 
                         <div class="row mb-3">
@@ -68,6 +67,16 @@
                                 @enderror
                             </div>
                         </div>
+
+                        
+                        <div class="row mb-3">
+                            <label for="profile_image" class="col-md-4 col-form-label text-md-end">{{ __('Profile Image') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="profile_image" type="file" class="form-control-file" name="profile_image">
+                            </div>
+                        </div>
+
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
@@ -96,11 +105,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
-                              <div>  Already have an account?   <a class="btn btn-link" href="/login">  {{ __('Log in') }}  </a></div>
-                        
+                                <div>Already have an account? <a href="/login" class="btn btn-link">{{ _('Log in') }}</a></div>
                             </div>
                         </div>
-                </form>
+                    </form>
                 </div>
             </div>
         </div>

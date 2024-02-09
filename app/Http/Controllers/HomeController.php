@@ -55,16 +55,18 @@ class HomeController extends Controller
                     'firstname' => 'required|string|max:255',
                     'lastname' => 'required|string|max:255',
                     'username' => 'required|string|max:255',
+                    'profile_image' => 'nullable|image|mimes:jpeg,png,jpg|max:1999',
                     'email' => 'required|email|unique:users,email,' . $user->id,
               ]);
   
              
-  
+              $profileImage = $request['profile_image']->store('profile_images', 'public');  
   
               $user->firstname=$request->input('firstname');
               $user->lastname=$request->input('lastname');
               $user->username=$request->input('username');
               $user->email=$request->input('email');
+              $user->profile_image=$profileImage;
   
               $user->save();
               
