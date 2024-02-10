@@ -15,24 +15,27 @@
     text-align:center ;
     min-height:400px;
     }
-a{
-color:black;
-text-decoration:none;
-text-transform:uppercase;
-background: rgb(95, 155, 108);
-width:90px;
-font-size:bold;
-font: 20px/2 Arial, Helvetica, sans-serif;
-border:solid;
-line-height:10px;
-cursor: pointer;
-    
 
+/* Style the anchor tag to look like a button */
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-a:hover{
-color:black;
-font-weight:bold;
+
+/* Hover effect */
+a:hover {
+  background-color: #45a051; /* Darker Green */
 }
+
 
 
     </style>
@@ -40,7 +43,7 @@ font-weight:bold;
 
 <body>
     
-    <br><br><img src="/img/dollar.jpg" width="70px" alt="logo"><br>
+    <br><br><img src="/img/logo (2).png" width="150px" alt="logo"><br>
     <h2>Welcome To Bloggers' Community<h2>
     <a  href="/login">LOG IN</a>
     <a  href="/register">SIGN UP</a>
