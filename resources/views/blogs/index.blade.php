@@ -46,6 +46,12 @@ h1 {
 
 	</style>
 
+<link rel="dns-prefetch" href="//fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+<!-- styles -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+
 </head>
 <body>
 
@@ -62,7 +68,7 @@ h1 {
 
 			<h1>Welcome, {{$user->username}}</h1>
 
-		<p>
+		<p class="note">
 		Welcome to <b>Bloggers' Community</b>, the ultimate blogging platform designed exclusively for you! Our platform offers a wide range of features and tools to enhance your blogging experience and help you connect with a vibrant community of like-minded individuals.<br><br>
 
 Key Features for Registered Users:<br>

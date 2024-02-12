@@ -28,10 +28,12 @@
         <div class="col-md-8">
            <center><h1>My Blogs</h1></center> 
             <div class="card">
-            @if(empty($blog))
-            <center><p>You Do Not Have Any Blog</p></center>
+            
+            @if($blogs->isEmpty())
+            <center><p>You Do Not Have Any Blog <br><br> <a href="/create"class="primary">Create Blog</a></p></center>
             @else
             @foreach($blogs as $blog)
+            
               <center>  <div class="card-header">{{ $blog->created_at }}</div></center>
 
               
@@ -75,6 +77,7 @@
                         </div>
                          @endforeach
                          @endif
+
                         </div>
                         
                     </div>

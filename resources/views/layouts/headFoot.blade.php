@@ -13,11 +13,7 @@
 <header>
 <div class="container">
 <div id="branding">
-<span class="highlight"> <img src="img/logo (2).png" width="60px" alt="logo"> Bloggers Community</span> 
-
-
-
-
+<span class="highlight"> <img src="img/logo (2).png" width="50px" alt="logo"> Bloggers Community</span> 
 </div>
 </header>
 <nav>
