@@ -8,6 +8,8 @@
   <link href="/css/comment.css" rel="stylesheet">
 </head>
 <body>
+<center>
+
 
   <h1>Comments</h1>
 
@@ -17,8 +19,16 @@
     <div class="comment-text">
     {{ $comment->body }}
     </div>
-    <div class="comment-timestamp">{{ $comment->created_at }}</div>
-  </div>
+    <div class="comment-timestamp">{{ $comment->created_at }}</div><br>
+
+      @if(Auth::check() && (Auth::user()->id === $comment->user_id || Auth::user()->id === $comment->post->user_id))
+        <form action="{{ route('comments.destroy', $comment->id) }}" method="POST">
+          @csrf
+              @method('DELETE')
+            <button>Delete Comment</button>
+        </form>
+      @endif  
+   </div>
  @endforeach
 
   @if(empty($comment->body))
@@ -40,5 +50,6 @@
     </form>
   </div>
 -->
+</center>
 </body>
 </html>

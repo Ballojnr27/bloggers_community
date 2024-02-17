@@ -1,8 +1,15 @@
   /* Style for the comment container */
   .comment-container {
-    border: 1px solid #ddd;
+    border: 3px solid #ddd;
     padding: 10px;
     margin-bottom: 15px;
+    text-align: center;
+    width: 300px;
+    
+  }
+
+  h1{
+    text-align: center;
   }
   
   /* Style for the commenter's name */

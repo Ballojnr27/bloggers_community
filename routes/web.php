@@ -32,7 +32,7 @@ Route::get('/blog_feed', [App\Http\Controllers\BlogController::class, 'showall']
 Route::get('/comment', [App\Http\Controllers\CommentController::class, 'comment'])->name('blogs.comment')->middleware('auth');
 Route::post('blog_feed/{postId}/comment', [App\Http\Controllers\CommentController::class, 'store_comment'])->name('blogs.store_comment')->middleware('auth');
 Route::get('/comments/{postId}', [App\Http\Controllers\CommentController::class, 'show_comment'])->name('comments.show');
-
+Route::delete('/comments/{comment}', [App\Http\Controllers\CommentController::class, 'destroy_comment'])->name('comments.destroy')->middleware('auth');
 
 
 

@@ -15,6 +15,12 @@
     <!-- styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
+    <style>
+        .no_blog{
+            padding-top: 30px;
+    margin: 0 auto;
+        }
+    </style>
 
 </head>
 <body>
@@ -28,12 +34,14 @@
         <div class="col-md-8">
            <center><h1>My Blogs</h1></center> 
             <div class="card">
+            <div class="card-body">
             
             @if($blogs->isEmpty())
-            <center><p>You Do Not Have Any Blog <br><br> <a href="/create"class="primary">Create Blog</a></p></center>
+            <center><p class="no_blog">You Do Not Have Any Blog <br><br> <a href="/create"class="primary">Create Blog</a></p></center>
             @else
             @foreach($blogs as $blog)
             
+    </div>
               <center>  <div class="card-header">{{ $blog->created_at }}</div></center>
 
               
@@ -53,9 +61,9 @@
                          <p ><b>{{ __('Content') }}: </b><br>{{ $blog->content }}</p>
                          </div>
 
-                         <form method="post" action="{{ route('blogs.store_comment', ['postId' => $blog->id]) }}">
+                         <form method="POST" action="{{ route('blogs.store_comment', ['postId' => $blog->id]) }}">
                             @csrf
-                           <textarea name="body" placeholder="Add a comment"></textarea><br>
+                           <textarea name="body" placeholder="Add a comment" required></textarea><br>
                             <button type="submit">Submit Comment</button>
                         </form>
 
@@ -67,10 +75,7 @@
                         </div>            
                         
                         <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST">
-                       
-                        
-                            
-                             @csrf
+                          @csrf
                              @method('DELETE')
                            <button>Delete Blog</button>
                         </form>

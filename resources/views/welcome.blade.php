@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BLOGGERS' COMMUNITY</title>
     <style>
         body{
     font: 15px/1.5 Arial, Helvetica, sans-serif;
-    padding-top: 200px;
+    padding-top: 150px;
     margin: 0 auto;
     background-color: hsla(139, 61%, 63%, 0.248);
     text-align:center ;
@@ -37,6 +37,11 @@ a:hover {
 }
 
 
+b{
+  font-size:20px;
+}
+
+
 
     </style>
 </head>
@@ -44,7 +49,7 @@ a:hover {
 <body>
     
     <br><br><img src="/img/logo (2).png" width="150px" alt="logo"><br>
-    <h2>Welcome To Bloggers' Community<h2>
+    <b>Welcome To Bloggers' Community<b><br><br>
     <a  href="/login">LOG IN</a>
     <a  href="/register">SIGN UP</a>
 </form>

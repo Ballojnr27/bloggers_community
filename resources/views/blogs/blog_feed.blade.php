@@ -50,7 +50,7 @@
 
                          <form method="post" action="{{ route('blogs.store_comment', ['postId' => $blog->id]) }}">
                             @csrf
-                           <textarea name="body" placeholder="Add a comment"></textarea><br>
+                           <textarea name="body" placeholder="Add a comment" required></textarea><br>
                             <button type="submit">Submit Comment</button>
                         </form>
 

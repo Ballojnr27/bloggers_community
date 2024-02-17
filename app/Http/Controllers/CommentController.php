@@ -24,7 +24,7 @@ class CommentController extends Controller
 
         
         $request->validate([
-            'body' => 'required|min:5',
+            'body' => 'required',
         ]);
 
         $comment = new Comment([
@@ -33,18 +33,28 @@ class CommentController extends Controller
             'body' => $request->input('body'),
         ]);
 
-        $comment->save();
+       $comment->save();
 
-        return redirect()->back()->with('success', 'Comment added successfully!');
+        return redirect()->route('comments.show', $postId)->with('success', 'Comment submitted successfully');//back()->with('success', 'Comment added successfully!');
     }
 
 
     public function show_comment($postId)
     {
-        $comments = Comment::with('user')->where('post_id', $postId)->get();
+        
+        $comments = Comment::with('user')->where('post_id', $postId)->orderBy('created_at', 'desc')->get();
        
         return view('blogs.comment', compact('comments'));
     }
+
+    public function destroy_comment(Comment $comment){
+
+        //$comment = Comment::findOrFail($postId);
+        $comment->delete();
+        return redirect()->back();
+     
+     }
+  
 
 
 
