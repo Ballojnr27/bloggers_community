@@ -59,8 +59,13 @@ class HomeController extends Controller
                     'email' => 'required|email|unique:users,email,' . $user->id,
               ]);
   
-             
-              $profileImage = $request['profile_image']->store('profile_images', 'public');  
+              $profileImage = null;
+
+              if (isset($request['profile_image'])) {
+                  $profileImage = $request['profile_image']->store('profile_images', 'public');
+              }
+              
+               
   
               $user->firstname=$request->input('firstname');
               $user->lastname=$request->input('lastname');

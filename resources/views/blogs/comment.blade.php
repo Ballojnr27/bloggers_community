@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comments</title>
+  <title style="font: 15px/1.5 Arial, Helvetica, sans-serif;">Bloggers' Community</title>
   
   <link href="/css/comment.css" rel="stylesheet">
 </head>
