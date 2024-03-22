@@ -77,8 +77,8 @@ class HomeController extends Controller
               
               return redirect()->route('blogs.profile')->with('success', 'Profile updated successfully');
         }
-   
-       
+
+        
   
       
   

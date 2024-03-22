@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*Route::get('/password/forget', function () {
+    return view('for_pass');
+});
+
+
+Route::get('/password/email', function () {
+    $user = User();
+
+        //if ($user == request('email') && request('security_ques') == 'Sport')
+        if (request('email') == 'bello@gmail.com')
+        {
+             return redirect()->route('password.updates');
+        }
+
+});*/
 
 
 
@@ -33,6 +50,10 @@ Route::get('/comment', [App\Http\Controllers\CommentController::class, 'comment'
 Route::post('blog_feed/{postId}/comment', [App\Http\Controllers\CommentController::class, 'store_comment'])->name('blogs.store_comment')->middleware('auth');
 Route::get('/comments/{postId}', [App\Http\Controllers\CommentController::class, 'show_comment'])->name('comments.show');
 Route::delete('/comments/{comment}', [App\Http\Controllers\CommentController::class, 'destroy_comment'])->name('comments.destroy')->middleware('auth');
+Route::get('/password/forget', [App\Http\Controllers\ForgotPassController::class, 'showResetForm'])->name('password.show');
+Route::post('/password/new', [App\Http\Controllers\ForgotPassController::class, 'resetPassword'])->name('password.new');
+Route::get('/password/create_new', [App\Http\Controllers\ForgotPassController::class, 'showNewPass'])->name('password.new.show');
+Route::post('/password/createPass', [App\Http\Controllers\ForgotPassController::class, 'createNewPass'])->name('password.new.create');
 
 
 

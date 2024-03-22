@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <center><div class="card-header"> <img src="img/logo (2).png" width="40px" alt="logo"> {{ __('Register') }}</div></center>
+                <center><div class="card-header"> <img src="img/logo (2).png" width="40px" alt="logo"> {{ __('SIGN UP') }}</div></center>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
@@ -99,6 +99,15 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="security_ques" class="col-md-4 col-form-label text-md-end">{{ __('Security Question') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="security_ques" type="text" class="form-control" name="security_ques" required autocomplete="security_ques" placeholder="What is your favorite sport?">
+                            </div>
+                        </div>
+
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

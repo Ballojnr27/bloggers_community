@@ -14,14 +14,14 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('password.email') }}">
+                    <form method="POST" action="{{ route('password.my') }}">
                         @csrf
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Enter Your Registered Email" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -31,10 +31,18 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="security_ques" class="col-md-4 col-form-label text-md-end">{{ __('Security Question') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="security_ques" type="text" class="form-control @error('email') is-invalid @enderror" name="security_ques" value="{{ old('security_ques') }}" placeholder="What is your favorite sport?" required autocomplete="email" autofocus>
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                    {{ __('Submit') }}
                                 </button>
                             </div>
                         </div>
