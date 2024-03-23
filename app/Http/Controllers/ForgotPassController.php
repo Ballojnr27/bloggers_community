@@ -37,7 +37,7 @@ class ForgotPassController extends Controller
         $user->save();
           // Send notification to the user
 
-          return redirect()->route('login')->withInput()->withErrors(['email' => 'Password changed successfully, please login with your new password.']);
+          return redirect()->route('login')->with('password_changed', true);
       }
 
       return back()->withInput()->withErrors(['security_ques' => 'Your answer is incorrect.']);

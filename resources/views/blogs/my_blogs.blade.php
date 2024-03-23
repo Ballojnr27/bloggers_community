@@ -77,8 +77,24 @@
                         <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST">
                           @csrf
                              @method('DELETE')
-                           <button>Delete Blog</button>
+                           <button onclick="return confirmDelete();">Delete Blog</button>
+                           <input type="hidden" name="confirmed" id="confirmed" value="false">
                         </form>
+                        <script>
+                            function confirmDelete(){
+                                var confirmed = confirm("Are you sure you want to delete this blog?");
+                                if (confirmed){
+                                    document.getElementById('confirmed').value = 'true';
+                                }
+                                return confirmed;
+                            }
+                        </script>
+
+                        @if (session('confirm_message'))
+                           <script>
+                               alert("{{ session('confirm_message') }}")
+                           </script>
+                        @endif
                         </div>
                          @endforeach
                          @endif

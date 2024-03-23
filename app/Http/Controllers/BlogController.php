@@ -44,12 +44,18 @@ public function show(){
 
 }
 
-public function destroy($id){
+public function destroy(Request $request, $id){
 
       $blog = Blog::findOrFail($id);
-      $blog->delete();
-   
-      return redirect('/my_blogs');
+      
+      
+      if ($request->has('confirmed') && $request->confirmed == true ) {     
+         $blog->delete();
+         return redirect('/my_blogs');
+      }else{
+            return redirect()->back()->with('confirm_message', 'Please confirm the deletion');
+      }    
+      
    
    }
 

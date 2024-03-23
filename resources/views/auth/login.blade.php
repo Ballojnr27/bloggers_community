@@ -61,7 +61,12 @@
                                 <div>Don't have an account?<a href="/register" class="btn btn-link">{{ _('Sign Up') }}</a></div>
                                 
                         </div>
-                        
+
+                        @if (session('password_changed'))
+                             <script>
+                                 alert('Password changed successfully, please login with your new password.')
+                             </script>
+                        @endif
                     </form>
                 </div>
             </div>
